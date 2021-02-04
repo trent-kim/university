@@ -1,10 +1,54 @@
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://use.typekit.net/akq0txd.css" />
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <p id="welcome" onload="loadWelcome()"></p>
-         
+    <div id="inboxContainer">
+      
+    </div>
+
+    <div id="interactContainer">
+      <div id="interactions">
+        <div id="inboxBox">
+          <div id="inboxTitle" class="button">
+            Inbox
+          </div>
+          <div id="inboxNum"></div>
+        </div>
+        <div id="eatButton" onclick="move()">
+          <div id="timeBar"></div>
+          <div id="eat1Button" class="button">
+            Eat
+          </div>
+        </div>
+        <div id="sleepButton">
+          <div class="button">
+            Sleep
+          </div>
+        </div> 
+      </div>
+
+      <div id="healthStatus">
+        <div id="bodyBar">
+          <div class="statusBar">
+            Body
+          </div>
+        </div>
+        <div id="mindBar">
+          <div class="statusBar">
+            Mind
+          </div>
+        </div>
+        <div id="bankBar">
+          <div class="statusBar">
+            Bank Account
+          </div>
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>

@@ -1,0 +1,93 @@
+body {
+    display: inline-flex;
+    font-family: forma-djr-display, sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+  }
+  
+ /* .timeBar, #eatButton2 {
+    
+  }*/
+  
+  
+  
+  /**********
+  INBOX AREA
+  **********/
+  #inbox {
+    width: 40vw;
+    height: 90vh;
+    border: solid black;
+    margin-right: 50px;
+    overflow: hidden;
+  }
+  
+  /*EMAILS*/
+  .email {
+    display: inline-flex;
+    padding: 5px 60px 5px 10px;
+    transition: margin 1s ease-out;
+  }
+  
+  .email:hover {
+    background-color: #FFE347;
+  }
+  
+  .emailHead {
+    flex-shrink: 0;
+    font-weight: 600;
+    margin-right: 20px;
+    margin-left: 15px;
+  }
+  
+  .emailBody {
+    flex-shrink: 0;
+    /*background-color: blue;*/
+  }
+  
+  
+  
+  /*******
+  BUTTONS
+  *******/
+  .button {
+    width: 50px;
+    border: solid black;
+    padding: 5px 60px 5px 10px;
+    margin-bottom: 34px;
+  }
+  
+  #interactContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /*INBOX COUNTER*/
+  #inboxBox {
+    display: inline-flex;
+    margin-bottom: 102px;
+  }
+  
+  #inboxNum {
+    padding: 8px 60px 4px 10px;
+    margin-left: -35px;
+  }
+  
+  
+  /***********
+  STATUS BARS
+  ***********/
+  
+  .statusBar {
+    width: 150px;
+    border: solid black;
+    padding: 5px 60px 5px 10px;
+    margin-top: 34px;
+  }
+  
+  .timeBar {
+    width: 1%;
+    height: 30px;
+    background-color: #5147FF;
+  }
