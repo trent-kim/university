@@ -1,21 +1,34 @@
 {
     "randomEmails": [
         {
-            "from": "",
-            "date": "",
-            "title": "",
-            "content": ""
+            "clickNum": 0,
+            "from": "Office of the President",
+            "date": "9/10/20",
+            "title": "Welcome to Wecair University",
+            "unreadTitle": "<b>Welcome to Wecair University-</b> Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
+            "readTitle": "Welcome to Wecair University- Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
+            "content": "Dear Students, <br>Congrats on surviving this far and welcome to Wecair. Our community of exceptional students are changing the world, and at Wecair, you can too. <br>Sincerely, President"
+        },
+        {
+            "clickNum": 0,
+            "from": "Office of the President",
+            "date": "9/10/20",
+            "title": "Welcome to Wecair University",
+            "unreadTitle": "<b>Welcome to Wecair University-</b> Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
+            "readTitle": "Welcome to Wecair University- Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
+            "content": "Dear Students, <br>Congrats on surviving this far and welcome to Wecair. Our community of exceptional students are changing the world, and at Wecair, you can too. <br>Sincerely, President"
         }
-    ]
-}
+    ],
 
-{
     "assignmentEmails": [
         {
-            "from": "",
-            "date": "",
-            "title": "",
-            "content": ""
+            "clickNum": 0,
+            "from": "Professor",
+            "date": "9/12/20",
+            "title": "Assignnment 1",
+            "unreadTitle": "<b>Assignnment 1</b>",
+            "readTitle": "Assignnment 1",
+            "content": "5 page essay about why youre the best"
         }
     ]
 }

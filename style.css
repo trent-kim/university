@@ -12,41 +12,60 @@ body {
   
   
   /**********
-  INBOX AREA
+  INBOX AND EMAILS
   **********/
-  #inbox {
-    width: 40vw;
+  #inboxContainer {
+    width: 70vw;
     height: 90vh;
     border: solid black;
     margin-right: 50px;
     overflow: hidden;
   }
   
-  /*EMAILS*/
-  .email {
+  .emailCombo {
     display: inline-flex;
     padding: 5px 60px 5px 10px;
     transition: margin 1s ease-out;
   }
   
-  .email:hover {
+  .emailCombo:hover {
     background-color: #FFE347;
   }
   
-  .emailHead {
-    flex-shrink: 0;
+  
+  .from {
     font-weight: 600;
-    margin-right: 20px;
-    margin-left: 15px;
-  }
-  
-  .emailBody {
     flex-shrink: 0;
-    /*background-color: blue;*/
+    width: 12vw;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 2vw;
+  }
+
+  .unreadTitle {
+    width: 40vw;
+    flex-shrink: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 2vw;
+    margin-left: 6vw;
+  }
+
+  .date {
+    width:8vw;
+    flex-shrink: 0;
+    align-items: flex-end;
+  }
+ /* 
+  .content {
+    flex-shrink: 8;
+    width: 35vw;
+    overflow: hidden;
+    white-space: nowrap;
   }
   
   
-  
+  */
   /*******
   BUTTONS
   *******/
