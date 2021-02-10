@@ -2,7 +2,7 @@
   <head>
     <link rel="stylesheet" href="https://use.typekit.net/akq0txd.css" />
     <link rel="stylesheet" href="/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/91bfb90d7f.js" crossorigin="anonymous"></script>
     <script src="/script.js" defer></script>
   </head>
@@ -10,45 +10,66 @@
     <div id="inboxContainer">
       
     </div>
-
     <div id="interactContainer">
       <div id="interactions">
-        <div id="inboxBox">
-          <div id="inboxTitle" class="button">
-            Inbox
+        <div id="headCounts">
+          <div id="inbox" class="count">
+            <div id="inboxTitle" >
+              Inbox
+            </div>
+            <div id="inboxNum">
+            </div>
           </div>
-          <div id="inboxNum">
+          <div id="timeOfDay" class="count">
+            <div id="timeOfDayTitle">Morning</div>
+          </div>
+          <div id="day" class="count">
+            <div id="dayTitle">Day</div>
+            <div id="dayNum">1</div>
           </div>
         </div>
-        <div id="eatButton">
-          <div id="timeBar"></div>
-          <div id="eat1Button" class="button">
+        
+        
+
+        <div id="healthStatus">
+          <div class="status">
+            <div class="statusName">Body</div>
+            <div class="bar">
+              <div id="bodyBar"></div>
+            </div>
+          </div>
+          <div class="status">
+            <div class="statusName">Mind</div>
+            <div class="bar">
+              <div id="mindBar"></div>
+            </div>
+          </div>
+          <div class="status">
+            <div class="statusName">Cash</div>
+            <div class="bar">
+              <div id="bankBar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="messageArea">
+          <p id="message"></p>
+        </div>
+
+        <div class="button" id="eatButton" onclick="eat()">
+          <div>
             Eat
           </div>
         </div>
-        <div id="sleepButton">
-          <div class="button">
+        <div class="button" id="sleepButton" onclick="sleep()">
+          <div>
             Sleep
           </div>
         </div> 
       </div>
 
-      <div id="healthStatus">
-        <div id="bodyBar">
-          <div class="statusBar">
-            Body
-          </div>
-        </div>
-        <div id="mindBar">
-          <div class="statusBar">
-            Mind
-          </div>
-        </div>
-        <div id="bankBar">
-          <div class="statusBar">
-            Bank Account
-          </div>
-        </div>
+      <div id="specialButtons">
+        <div id="deleteButton"></div>
       </div>
 
     </div>

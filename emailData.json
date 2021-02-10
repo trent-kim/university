@@ -3,30 +3,41 @@
         {
             "clickNum": 0,
             "from": "Office of the President",
-            "date": "9/10/20",
+            "date": "Day 1",
             "title": "Welcome to Wecair University",
             "unreadTitle": "<b>Welcome to Wecair University-</b> Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
             "readTitle": "Welcome to Wecair University- Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
-            "content": "Dear Students, <br>Congrats on surviving this far and welcome to Wecair. Our community of exceptional students are changing the world, and at Wecair, you can too. <br>Sincerely, President"
+            "content": "Dear Students, <br><br>Congrats on your hard work and survival up till now. The year ahead will challenge us with incredible obstacles not only academically, but also collectively. But as always we come together to embrace growth and radical empathy. As I think of our diverse, inclusive community, I am reminded of a quote by the inspiring activist William: <br><br>“Intersectionality.”<br><br>And this holds true as our students, faculty, and staff continue to thrive and positively impact this complex society. Thank you all for your continually contribution to building the Wecair community and wealth.<br><br>Sincerely, <br>President "
+            
         },
         {
             "clickNum": 0,
-            "from": "Office of the President",
-            "date": "9/10/20",
-            "title": "Welcome to Wecair University",
-            "unreadTitle": "<b>Welcome to Wecair University-</b> Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
-            "readTitle": "Welcome to Wecair University- Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
-            "content": "Dear Students, <br>Congrats on surviving this far and welcome to Wecair. Our community of exceptional students are changing the world, and at Wecair, you can too. <br>Sincerely, President"
+            "from": "Center of Student Life",
+            "date": "Day 1",
+            "title": "Welcome Back Wecair",
+            "unreadTitle": "<b>Wecome Back Wecair-</b> Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where",
+            "readTitle": "Welcome Back Wecair- Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where",
+            "content": "Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where you’ll meet our student led clubs and organizations. Sign up for anything that interests you before it’s too late! We'll be keeping in touch with student events and programs. See ya!"
+        },
+        {
+            "clickNum": 0,
+            "from": "Campus Landlord",
+            "date": "Day 1",
+            "title": "First Month's Tuition",
+            "unreadTitle": "<b>First Month's Tuition-</b> Dear Beloved Student, THIS IS A REMINDER THAT YOUR MONTHLY TUITION IS PENDING. (Go check- maybe we gave you financial",
+            "readTitle": "First Month's Tuition- Dear Beloved Student, THIS IS A REMINDER THAT YOUR MONTHLY TUITION IS PENDING. (Go check- maybe we gave you financial",
+            "content": "Dear Beloved Student,<br><br>THIS IS A REMINDER THAT YOUR MONTHLY TUITION IS PENDING.<br>(Go check- maybe we gave you financial aid this time)<br><br>Please arrange payment by the bill due date of Day 10.<br><br>You will most likely be confused, so please do not hesitate to reach out or panic call your parents. You may email us at campuslandlord@wecair.edu, or call us at 401-454-6661.<br><br>Thank you so much,<br>Your Campus Landlord"
         }
     ],
 
     "assignmentEmails": [
         {
             "clickNum": 0,
-            "from": "Professor",
-            "date": "9/12/20",
-            "title": "Assignnment 1",
-            "unreadTitle": "<b>Assignnment 1</b>",
+            "from": "Professor Cohen-Gee",
+            "date": "Day 1",
+            "dueDate": "3",
+            "title": "Welcome to UNIV 111",
+            "unreadTitle": "<b></b>",
             "readTitle": "Assignnment 1",
             "content": "5 page essay about why youre the best"
         }

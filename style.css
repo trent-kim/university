@@ -1,31 +1,35 @@
-body {
+  body {
     display: inline-flex;
     font-family: forma-djr-display, sans-serif;
     letter-spacing: 2px;
     font-size: 16px;
   }
   
- /* .timeBar, #eatButton2 {
-    
-  }*/
-  
-  
-  
+  #interactContainer {
+    margin-top: 2vh;
+  }
+
   /**********
   INBOX AND EMAILS
   **********/
   #inboxContainer {
-    width: 70vw;
-    height: 90vh;
+    width: 60vw;
+    height: 94vh;
     border: solid black;
-    margin-right: 50px;
+    margin: 2vh 4.25vw 0vh 1vw;
     overflow: hidden;
   }
   
-  .emailCombo {
+  /*.emailCombo {
     display: inline-flex;
     padding: 5px 60px 5px 10px;
     transition: margin 1s ease-out;
+  }
+*/
+  .email {
+    display: inline-flex;
+    padding: 5px 60px 5px 10px;
+    border-bottom: solid black;
   }
   
   .emailCombo:hover {
@@ -43,7 +47,7 @@ body {
   }
 
   .unreadTitle {
-    width: 40vw;
+    width: 30vw;
     flex-shrink: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -63,18 +67,60 @@ body {
     overflow: hidden;
     white-space: nowrap;
   }
-  
-  
   */
+
+  /*************
+  OPENED EMAILS
+  *************/
+
+  .openedEmail {
+    margin: 25px 60px 60px 60px;
+    flex-wrap: wrap;
+  }
+
+  .openedTitle {
+    font-weight: 600;
+    width: 50vw;
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+
+  .openedHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+
+
   /*******
   BUTTONS
   *******/
   .button {
     width: 50px;
+    color: black;
     border: solid black;
+    padding: 1px 60px 1px 5px;
+    margin-bottom: 34px;
+  }
+
+  .buttonDisabled {
+    width: 50px;
+    color: grey;
+    border: solid grey;
+    padding: 1px 60px 1px 5px;
+    margin-bottom: 34px;
+  }
+
+  .button:hover {
+    font-weight: bold;
+  }
+
+  .count {
+    width: 50px;
     padding: 5px 60px 5px 10px;
     margin-bottom: 34px;
   }
+  
   
   #interactContainer {
     display: flex;
@@ -82,31 +128,114 @@ body {
     justify-content: space-between;
   }
   
-  /*INBOX COUNTER*/
-  #inboxBox {
+  #specialButtons {
+    align-items:flex-end;
+    background-color: crimson;
+  }
+
+  /******
+  COUNTS
+  ******/
+
+  #headCounts {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .count {
     display: inline-flex;
-    margin-bottom: 102px;
+    margin-bottom: 50px;
   }
   
+  #inbox {
+    width: 50px;
+  }
+
   #inboxNum {
-    padding: 8px 60px 4px 10px;
-    margin-left: -35px;
+    margin-left: 40px;
+    
+  }
+
+  #timeOfDay {
+    text-align: center;
+  }
+
+  #timeOfDayTitle {
+    margin-left: 31px;
+    transition: transform 3s ease;
+  }
+
+  #day {
+    width: 50px;
+  }
+
+  #dayTitle {
+    margin-left: 24px;
+  }
+
+  #dayNum {
+    margin-left: 40px;
   }
   
+  /*******
+  MESSAGE
+  *******/
+
+  #messageArea {
+    margin: auto;
+  }
+
+  #message {
+    width: 30vw;
+    margin-top: 66px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+
   
   /***********
   STATUS BARS
   ***********/
-  
-  .statusBar {
-    width: 150px;
+
+  .status {
+    display: flex;
+  }
+
+  .statusName {
+    width: 50px;
+    padding: 5px 35px 5px 10px;
+  }
+
+  .bar {
+    /* width: 23.75vw; */
+    flex-grow: 1;
     border: solid black;
-    padding: 5px 60px 5px 10px;
-    margin-top: 34px;
+    /* padding: 5px 60px 5px 10px; */
+    margin-bottom: 34px;
+    margin-right: 10px;
   }
   
   .timeBar {
     width: 1%;
-    height: 30px;
-    background-color: #5147FF;
+    background-color: black;
+  }
+
+  #bodyBar {
+    width: 50%;
+    height: 10px;
+    background-color: black;
+    transition: width 2s ease;
+  }
+
+  #mindBar {
+    width: 50%;
+    height: 10px;
+    background-color:black;
+    transition: width 2s ease;
+  }
+
+  #bankBar {
+    width: 20%;
+    height: 10px;
+    background-color: black;
   }

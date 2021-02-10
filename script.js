@@ -8,6 +8,7 @@ $.getJSON("emailData.json", function(data){
   console.log(data.randomEmails[0].title);
 })
 
+
 //number of unopened emails in the inbox
 let emailCount = 0;
 $("#inboxNum").html(emailCount)
@@ -16,48 +17,73 @@ $("#inboxNum").html(emailCount)
 let randomEmailCounter = 0;
 let assignmentEmailCounter = 0;
 
+
 //for pausing and playing the setInterval
 let isPaused = false;
-
 
 //for every -- seconds create a new random email
 setInterval(function() {
   //if the interval count is not paused, then create the email
+  if (timeOfDay == "Night") {
+    isPaused = true;
+  } else {
+    isPaused = false;
+  }
+
   if(!isPaused) {
     createRandomEmail();
   };
 }
-, 3000);
-
+, 30000);
 
 //for every -- seconds create a new assignment email
 setInterval(function() {
   //if the interval count is not paused, then create the email
+  if (timeOfDay == "Night") {
+    isPaused = true;
+  } else {
+    isPaused = false;
+  }
+  
   if(!isPaused) {
     createAssignmentEmail();
   };
 }
-, 5000);
+, 70000);
 
 
 function createRandomEmail() {
-  $("#inboxContainer").append(
-    `<div class="emailCombo">
+  $("#inboxContainer").prepend(
+    `<div class="emailCombo closed">
       <div id="${randomEmailCounter}" class="email">
-          <input type="checkbox">
+          <input class="emailCheckbox" type="checkbox">
           <div class="from">${randomEmail[randomEmailCounter].from}</div>
           <div class="unreadTitle">${randomEmail[randomEmailCounter].unreadTitle}</div>
           <div class="date">${randomEmail[randomEmailCounter].date}</div>
       </div>
       <div class="openedEmail">
-        <i class="fas fa-arrow-left" onclick="closeEmail()"></i>
-        <div class="openedFrom">${randomEmail[randomEmailCounter].from}</div>
-        <div class="openedDate">${randomEmail[randomEmailCounter].date}</div>
+        <i class="fas fa-arrow-left back"></i>
         <div class="openedTitle">${randomEmail[randomEmailCounter].title}</div>
+        <div class="openedHead">
+          <div class="openedFrom">${randomEmail[randomEmailCounter].from}</div>
+          <div class="openedDate">${randomEmail[randomEmailCounter].date}</div>
+        </div>
         <div class="openedContent">${randomEmail[randomEmailCounter].content}</div>
       </div>
     </div>`
   );
+
+  randomClicker();
+  closeEmail();
+
+  //when a email is receive from the Campus Landlord, the pay button appears
+  if (randomEmail[randomEmailCounter].from == "Campus Landlord") {
+    $(`<div class="button" id="payButton" onclick="pay()">
+        <div>
+          Pay
+        </div>
+      </div>`).hide().appendTo("#interactions").fadeIn(800);
+  }
 
   //hide the opened email container
   $(".openedEmail").hide();
@@ -68,27 +94,33 @@ function createRandomEmail() {
   //add one to the inbox count
   emailCount++
   $("#inboxNum").html(emailCount);
-};
 
+  
+}
 
 function createAssignmentEmail() {
-  $("#inboxContainer").append(
-    `<div class="emailCombo">
+  $("#inboxContainer").prepend(
+    `<div class="emailCombo closed">
       <div id="${assignmentEmailCounter}" class="email">
-          <input type="checkbox">
+          <input class="emailCheckbox" type="checkbox">
           <div class="from">${assignmentEmail[assignmentEmailCounter].from}</div>
           <div class="unreadTitle">${assignmentEmail[assignmentEmailCounter].unreadTitle}</div>
           <div class="date">${assignmentEmail[assignmentEmailCounter].date}</div>
       </div>
       <div class="openedEmail">
-        <i class="fas fa-arrow-left" onclick="closeEmail()"></i>
-        <div class="openedFrom">${assignmentEmail[assignmentEmailCounter].from}</div>
-        <div class="openedDate">${assignmentEmail[assignmentEmailCounter].date}</div>
+        <i class="fas fa-arrow-left back"></i>
         <div class="openedTitle">${assignmentEmail[assignmentEmailCounter].title}</div>
+        <div class="openedHead">
+          <div class="openedFrom">${assignmentEmail[assignmentEmailCounter].from}</div>
+          <div class="openedDate">${assignmentEmail[assignmentEmailCounter].date}</div>
+        </div>
         <div class="openedContent">${assignmentEmail[assignmentEmailCounter].content}</div>
       </div>
     </div>`
   );
+  
+  assignmentClicker();
+  closeEmail();
 
   //hide the opened email container
   $(".openedEmail").hide();
@@ -100,40 +132,287 @@ function createAssignmentEmail() {
   emailCount++;
   $("#inboxNum").html(emailCount);
 
-};
+  //when the first assignment is assigned, the work button appears
+  if (assignmentEmailCounter == 1) {
+    $(`<div class="button" id="workButton" onclick="work()">
+        <div>
+          Work
+        </div>
+      </div>`).hide().appendTo("#interactions").fadeIn(800);
+  }
+}
 
 
-let emailNum = $(".email", this).attr('id');
+function randomClicker(){
+  $(".emailCombo").click(function(){
+    if($(".emailCombo").hasClass("closed")){
+      //pause interval count and create email functions
+      isPaused = true;
+      console.log("opening");
+      
+  
+      //show the opened email and hide the inbox emails including “.emailCombo” divs
+      $(".openedEmail", this).show();
+      $(".email").hide();
+      $(".emailCombo").not(this).hide();
+      $(this).removeClass("closed").addClass("opened");
+      $(this).removeClass("emailCombo").addClass("notEmailCombo");    
+    };
+    //if the email is being opened for the first time, subtract one from the inbox count
+    let emailNum = $(".email", this).attr("id");
+    if (randomEmail[emailNum].clickNum == 0) {
+      randomEmail[emailNum].clickNum = 1;
+      // $(".unreadtitle", this).html(randomEmail[emailNum].readTitle);
+      // $(".unreadtitle", this).html(randomEmail[emailNum].readTitle);
+      emailCount--;
+      $("#inboxNum").html(emailCount);
+    };
+  });
+}
+
 
 //open an inbox email when clicked
-$(".emailCombo").click(function() {  
-  //pause interval count and create email functions
-  isPaused = true;
-  console.log("opened")
-  
-  //show the opened email and hide the inbox emails including ".emailCombo" divs
-  $(".openedEmail", this).show();
-  $(".email").hide();
-  $(".emailCombo").not(this).hide();
-  
+function assignmentClicker(){
+$(".emailCombo").click(function(){
+  if($(".emailCombo").hasClass("closed")){
+    //pause interval count and create email functions
+    isPaused = true;
+    console.log("opening");
+    
+
+    //show the opened email and hide the inbox emails including “.emailCombo” divs
+    $(".openedEmail", this).show();
+    $(".email").hide();
+    $(".emailCombo").not(this).hide();
+    $(this).removeClass("closed").addClass("opened");
+    $(this).removeClass("emailCombo").addClass("notEmailCombo");    
+  };
   //if the email is being opened for the first time, subtract one from the inbox count
-  if (randomEmail[emailNum].clickNum == 0) {
-    randomEmail[emailNum].clickNum = 1;
+  let emailNum = $(".email", this).attr("id");
+  
+  if (assignmentEmail[emailNum].clickNum == 0) {
+    assignmentEmail[emailNum].clickNum = 1;
+    // $(".unreadtitle", this).html(assignmentEmail[emailNum].readTitle);
+    // $(".unreadtitle", this).html(assignmentEmail[emailNum].readTitle);
     emailCount--;
     $("#inboxNum").html(emailCount);
   };
 });
+};
 
 
 //close an opened email and send back to the inbox emails when the back arrow is clicked
 function closeEmail() {
-  //start interval count and create email functions
-  isPaused = false;
-  $(".email").show();
-  $(".openedEmail").hide();
-  
-};
+  $(".back").click(function(){
+      
 
+    if ($(".notEmailCombo").hasClass("opened")) {
+
+      isPaused = false;
+      console.log("closing");
+      $(".emailCombo").show();
+      $(".email").show();
+      $(".openedEmail").hide();
+    
+      $(this).parent().parent().removeClass("opened").addClass("closed");
+      
+    };
+    //$(".emailCombo").on("click", function() {
+      // console.log("turned back on");
+    // })
+    $(this).removeClass("notEmailCombo").addClass("emailCombo");
+  });
+}
+  //start interval count and create email functions
+  
+
+$('.emailCheckBox').click(function() {
+    $(`<div class="button" id="payButton" onclick="pay()">
+    <div>
+      Pay
+    </div>
+  </div>`).toggle(this.checked).appendTo("#deleteButton").fadeIn(800);
+});
+
+/***********
+STATUS BARS
+***********/
+
+let bodyHealth = 50;
+
+let mindHealth = 50;
+let money = 20;
+
+
+function eat() {
+  let bodyBar = $("#bodyBar");
+  
+  if (money < 40) {
+    bodyHealth += 15;
+    mindHealth -= 5;
+    
+    message = '<i>"Looks like its Cup-O-Noodles for now."<i>'
+    $('#message').fadeOut(800, function() {
+      $("#message").html(message).fadeIn(800)});
+    setTimeout(function() {
+      message = "<br>";
+      $('#message').fadeOut(800, function() {
+        $("#message").html(message).fadeIn(800)});
+    }, 
+    10000);
+
+  } else {
+    bodyHealth += 25;
+    mindHealth += 10;
+  }
+
+  if (bodyHealth > 100) {
+    bodyHealth = 100;
+    console.log("nothing");
+  };
+  if (mindHealth > 100) {
+    mindHealth = 100;
+    console.log("nothing");
+  };
+
+  $('.button').removeClass("button").addClass("buttonDisabled");
+  setTimeout(function() {
+    $('.buttonDisabled').removeClass("buttonDisabled").addClass("button");
+  },
+  10000);
+
+	if (bodyBar) {
+    $(bodyBar).css({ "width": bodyHealth + '%', "transition": "width 10s ease-in"});
+    };
+  if (mindBar) {
+    $(mindBar).css({ "width": mindHealth + '%', "transition": "width 10s ease-in"});
+    };
+}
+
+let sleepClickCounter = 0;
+let lastClick = 0;
+
+// function amountOfClicks() {
+//   let d = new Date();
+//   let t = d.getTime();
+//   lastClick = t;
+//   let timeDiff = t - lastClick;
+//   console.log(timeDiff);
+//   console.log("working");
+//   return timeDiff;
+// }
+
+function sleep() {
+  let d = new Date();
+  let t = d.getTime();
+  let timeDiff = t - lastClick;
+  lastClick = t;
+  console.log(timeDiff);
+  console.log("working");
+  sleepClickCounter++;
+  if (timeDiff >= 1000) {
+   goingToSleep();
+  
+  };
+  
+  console.log(sleepClickCounter);
+}
+
+function goingToSleep() {
+  let lengthOfSleep = sleepClickCounter * 10000;
+  console.log(lengthOfSleep);
+  let mindBar = $("#mindBar");
+  
+  
+
+  mindHealth += 5 * sleepClickCounter;
+  bodyHealth += 5 * sleepClickCounter;
+  if (3 > sleepClickCounter >= 1) {
+    message = '<i>(light breathing)<i>';
+  } else if (6 > sleepClickCounter >= 3) {
+    message = '<i>(shuffling sheets)<i>';
+  } else {
+    message = '<i>(heavy snoring)<i>';
+  };
+  
+  $('#message').fadeOut(800, function() {
+    $("#message").html(message).fadeIn(800)});
+  setTimeout(function() {
+    message = "<br>";
+    $('#message').fadeOut(800, function() {
+      $("#message").html(message).fadeIn(800)});
+  }, 
+  lengthOfSleep);
+  
+  if (mindHealth > 100) {
+    mindHealth = 100;
+    console.log("nothing");
+  };
+  if (bodyHealth > 100) {
+    bodyHealth = 100;
+    console.log("nothing");
+  };
+
+  $('.button').removeClass("button").addClass("buttonDisabled");
+  setTimeout(function() {
+    $('.buttonDisabled').removeClass("buttonDisabled").addClass("button");
+  },
+  lengthOfSleep);
+
+	if (mindBar) {
+		$(mindBar).css({ "width": mindHealth + '%', "transition": "width " + lengthOfSleep / 1000 + "s ease-in"});
+    };
+  if (bodyBar) {
+    $(bodyBar).css({ "width": bodyHealth + '%', "transition": "width " + lengthOfSleep / 1000 + "s ease-in"});
+    };
+  sleepClickCounter = 0;
+}
+
+
+/******
+COUNTS
+******/
+
+let dayCount = 1;
+$("#dayNum").html(dayCount);
+
+setInterval(function() {
+  dayCount++;
+  $("#dayNum").html(dayCount);
+}, 
+240000);
+
+let timeOfDay = "Morning";
+$("#timeOfDayTitle").html(timeOfDay);
+
+setInterval(function() {
+  if (timeOfDay == "Morning") {
+    timeOfDay = "Afternoon";
+    $('#timeOfDayTitle').fadeOut(500, function() {
+      $("#timeOfDayTitle").html(timeOfDay).fadeIn(500)});
+  } else if (timeOfDay == "Afternoon") {
+    timeOfDay = "Evening";
+    $('#timeOfDayTitle').fadeOut(500, function() {
+      $("#timeOfDayTitle").html(timeOfDay).fadeIn(500)});
+  } else if (timeOfDay == "Evening") {
+    timeOfDay = "Night";
+    $('#timeOfDayTitle').fadeOut(500, function() {
+      $("#timeOfDayTitle").html(timeOfDay).fadeIn(500)});
+  } else if (timeOfDay == "Night") {
+    timeOfDay = "Morning";
+    $('#timeOfDayTitle').fadeOut(500, function() {
+      $("#timeOfDayTitle").html(timeOfDay).fadeIn(500)});
+  }
+},
+60000)
+
+
+/*******
+MESSAGE
+*******/
+
+let message = " <br>";
+$("#message").html(message).fadeIn(500);
 
 
 
