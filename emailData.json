@@ -3,7 +3,7 @@
         {
             "clickNum": 0,
             "from": "Office of the President",
-            "date": "Day 1",
+            "date": "1",
             "title": "Welcome to Wecair University",
             "unreadTitle": "<b>Welcome to Wecair University-</b> Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
             "readTitle": "Welcome to Wecair University- Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
@@ -13,7 +13,7 @@
         {
             "clickNum": 0,
             "from": "Center of Student Life",
-            "date": "Day 1",
+            "date": "1",
             "title": "Welcome Back Wecair",
             "unreadTitle": "<b>Wecome Back Wecair-</b> Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where",
             "readTitle": "Welcome Back Wecair- Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where",
@@ -22,7 +22,7 @@
         {
             "clickNum": 0,
             "from": "Campus Landlord",
-            "date": "Day 1",
+            "date": "1",
             "title": "First Month's Tuition",
             "unreadTitle": "<b>First Month's Tuition-</b> Dear Beloved Student, THIS IS A REMINDER THAT YOUR MONTHLY TUITION IS PENDING. (Go check- maybe we gave you financial",
             "readTitle": "First Month's Tuition- Dear Beloved Student, THIS IS A REMINDER THAT YOUR MONTHLY TUITION IS PENDING. (Go check- maybe we gave you financial",
@@ -34,7 +34,7 @@
         {
             "clickNum": 0,
             "from": "Professor Cohen-Gee",
-            "date": "Day 1",
+            "date": "1",
             "dueDate": "3",
             "title": "Welcome to UNIV 111",
             "unreadTitle": "<b></b>",
