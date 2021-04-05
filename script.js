@@ -238,10 +238,10 @@ $('.emailCheckBox').click(function() {
 STATUS BARS
 ***********/
 
-let bodyHealth = 50;
+let bodyHealth = 75;
 
-let mindHealth = 50;
-let money = 20;
+let mindHealth = 75;
+let money = 50;
 
 
 function eat() {
@@ -264,6 +264,16 @@ function eat() {
   } else {
     bodyHealth += 25;
     mindHealth += 10;
+
+    message = '<i>"Ahhhhh, sustenance."<i>'
+    $('#message').fadeOut(800, function() {
+      $("#message").html(message).fadeIn(800)});
+    setTimeout(function() {
+      message = "<br>";
+      $('#message').fadeOut(800, function() {
+        $("#message").html(message).fadeIn(800)});
+    }, 
+    10000);
   }
 
   if (bodyHealth > 100) {
@@ -411,7 +421,7 @@ setInterval(function() {
 MESSAGE
 *******/
 
-let message = " <br>";
+let message = "<br>";
 $("#message").html(message).fadeIn(500);
 
 

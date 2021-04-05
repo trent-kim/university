@@ -7,7 +7,7 @@
             "title": "Welcome to Wecair University",
             "unreadTitle": "<b>Welcome to Wecair University-</b> Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
             "readTitle": "Welcome to Wecair University- Dear Students, Congrats on surviving this far and welcome to Wecair. Our community of exceptional students",
-            "content": "Dear Students, <br><br>Congrats on your hard work and survival up till now. The year ahead will challenge us with incredible obstacles not only academically, but also collectively. But as always we come together to embrace growth and radical empathy. As I think of our diverse, inclusive community, I am reminded of a quote by the inspiring activist William: <br><br>“Intersectionality.”<br><br>And this holds true as our students, faculty, and staff continue to thrive and positively impact this complex society. Thank you all for your continually contribution to building the Wecair community and wealth.<br><br>Sincerely, <br>President "
+            "content": "Dear Students, <br><br>Congrats on your hard work and survival up till now. The year ahead will challenge us with incredible obstacles not only academically, but also collectively. But as always we come together to embrace growth and radical empathy. As I think of our diverse, inclusive community, I am reminded of a quote by Buckminster Fuller: <br><br>“You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete.”<br><br>And this holds true as our students, faculty, and staff continue to thrive and positively impact this complex society. Thank you all for your continually contribution to building the Wecair community and wealth.<br><br>Sincerely, <br>President Christina Somerson"
             
         },
         {
@@ -15,7 +15,7 @@
             "from": "Center of Student Life",
             "date": "1",
             "title": "Welcome Back Wecair",
-            "unreadTitle": "<b>Wecome Back Wecair-</b> Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where",
+            "unreadTitle": "<b>Welcome Back Wecair-</b> Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where",
             "readTitle": "Welcome Back Wecair- Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where",
             "content": "Greetings! Welcome back everyone and special welcome to our new friends. We want to invite you to the upcoming Student Club Fair where you’ll meet our student led clubs and organizations. Sign up for anything that interests you before it’s too late! We'll be keeping in touch with student events and programs. See ya!"
         },
@@ -33,13 +33,13 @@
     "assignmentEmails": [
         {
             "clickNum": 0,
-            "from": "Professor Cohen-Gee",
+            "from": "Norman Khakis",
             "date": "1",
-            "dueDate": "3",
+            "dueDate": "4",
             "title": "Welcome to UNIV 111",
-            "unreadTitle": "<b></b>",
-            "readTitle": "Assignnment 1",
-            "content": "5 page essay about why youre the best"
+            "unreadTitle": "<b>Welcome to UNIV 111-</b> Hello All, Welcome to Wecair. I hope you are all doing well and are excited for the semester to start.",
+            "readTitle": "Welcome to LAS 111- Hello All, Welcome to Wecair. I hope you are all doing well and are excited for the semester to start.",
+            "content": "Hello All,<br><br>Welcome to Wecair. I hope you are all doing well and are excited for the semester to start. In the meantime, I thought "
         }
     ]
 }

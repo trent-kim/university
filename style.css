@@ -33,7 +33,7 @@
   }
   
   .emailCombo:hover {
-    background-color: #f5cb42;
+    background-color: #FCF8DC;
   }
   
   
@@ -221,21 +221,21 @@
   }
 
   #bodyBar {
-    width: 50%;
+    width: 75%;
     height: 10px;
     background-color: black;
     transition: width 2s ease;
   }
 
   #mindBar {
-    width: 50%;
+    width: 75%;
     height: 10px;
     background-color:black;
     transition: width 2s ease;
   }
 
   #bankBar {
-    width: 20%;
+    width: 50%;
     height: 10px;
     background-color: black;
   }
