@@ -238,9 +238,9 @@ $('.emailCheckBox').click(function() {
 STATUS BARS
 ***********/
 
-let bodyHealth = 75;
+let bodyHealth = 10;
 
-let mindHealth = 75;
+let mindHealth = 30;
 let money = 50;
 
 
@@ -337,9 +337,9 @@ function goingToSleep() {
 
   mindHealth += 5 * sleepClickCounter;
   bodyHealth += 5 * sleepClickCounter;
-  if (3 > sleepClickCounter >= 1) {
+  if (sleepClickCounter < 3) {
     message = '<i>(light breathing)<i>';
-  } else if (6 > sleepClickCounter >= 3) {
+  } else if (sleepClickCounter < 4) {
     message = '<i>(shuffling sheets)<i>';
   } else {
     message = '<i>(heavy snoring)<i>';
@@ -369,13 +369,14 @@ function goingToSleep() {
   },
   lengthOfSleep);
 
+  console.log(mindHealth);
 	if (mindBar) {
 		$(mindBar).css({ "width": mindHealth + '%', "transition": "width " + lengthOfSleep / 1000 + "s ease-in"});
     };
   if (bodyBar) {
     $(bodyBar).css({ "width": bodyHealth + '%', "transition": "width " + lengthOfSleep / 1000 + "s ease-in"});
     };
-  sleepClickCounter = 0;
+  //sleepClickCounter = 0;
 }
 
 

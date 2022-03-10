@@ -221,14 +221,14 @@
   }
 
   #bodyBar {
-    width: 75%;
+    width: 10%;
     height: 10px;
     background-color: black;
     transition: width 2s ease;
   }
 
   #mindBar {
-    width: 75%;
+    width: 30%;
     height: 10px;
     background-color:black;
     transition: width 2s ease;
